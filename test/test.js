@@ -1,9 +1,15 @@
 'use strict';
 
 import test from 'ava';
-import gravity from '../lib/index';
+import { Strategy } from '../lib/index';
 
-test('awesome:test', (t) => {
-  const message = 'everything is awesome';
-  t.is(gravity('awesome'), message, message);
+test('calling constructor with bare minimum', (t) => {
+  const myTest = () =>
+    new Strategy({
+      hostname: 'my.hostname.com',
+      callbackURL: 'https://my.host.com/callback',
+      clientID: '1234',
+      clientSecret: 'sssshhhh',
+    }, () => {});
+  t.notThrows(myTest);
 });
