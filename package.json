@@ -28,6 +28,7 @@
     "eslint": "^4.10.0",
     "eslint-config-oniyi": "^5.0.2",
     "eslint-plugin-ava": "^4.2.2",
+    "jsdoc-to-markdown": "^3.0.1",
     "nyc": "^11.3.0",
     "prettier-eslint-cli": "^4.4.0"
   },
@@ -42,6 +43,7 @@
     "test": "ava --verbose",
     "test:watch": "npm test -- --watch",
     "coverage": "nyc npm test && nyc report --reporter=html",
-    "preversion": "npm run coverage"
+    "preversion": "npm run coverage",
+    "docs": "jsdoc2md lib/**/*.js > api.md"
   }
 }
